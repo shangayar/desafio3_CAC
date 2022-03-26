@@ -1,19 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
-</head>
-<body>
-    <h1>Muestra en consola la edad del alumno más grande y el mas pequeño.</h1>
-    <div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: gainsboro;
+      }
+      label{
+          font-size:16px;
+          color:blue;
+      }
+      input{
+        display: block;
+        padding: 10px;
+        margin:5px;      
+        
+      }
+      button{
+         background-color:aquamarine;
+         padding: 10px;
+         margin:5px;
+      }
+    </style>
+
+    <title>Desafio 3</title>
+  </head>
+  <body>
+    <head>
+      <h1>Ingrese los datos de las personas.</h1>
+    </head>
+    <main>
+      <div>
+        <h1>Consigna Item 1</h1>
+        <p>
+          <b>Number.NEGATIVE_INFINITY</b> representa el mismo valor negativo de
+          la propiedad del objeto global Infinity. <br />En el proceso esta
+          fijando como Max_num = -infinito dentro de la función, otra función
+          similar es <b>Number.POSITIVE_INFINITY.</b><br />
+          La función find_max() recibe como parámetro objeto nums, Luego realiza
+          un "for of", aqui recorre cada elemento desde el primero hasta
+          nums(que fue el parámetro ingresado) Dentro del for of, se realiza una
+          comparación para que num > max_num. Finalmente se retorna el valor
+          máximo. Los datos son almacenados dentro del objeto nums.
+        </p>
+      </div>
+      <div>
+        <h1>Consigna Item 2</h1>
+        <h4>
+          Se cargan Personas con Nombre, Apellido y Edad. El programa muestra la
+          persona de mayor y menor edad.
+        </h4>
+        <form action="" id="form">
+          <label>Nombre</label
+          ><input
+            id="nombre"
+            name="nombre"
+            type="text"
+            placeholder="Coloca el nombre"
+          /><br />
+          <label>Apellido</label
+          ><input
+            id="apellido"
+            name="apellido"
+            type="text"
+            placeholder="Coloca el apellido"
+          /><br />
+          <label>Edad</label
+          ><input
+            id="edad"
+            name="edad"
+            type="number"
+            placeholder="Coloca la edad"
+          /><br />
+          <button id="boton" type="button" onclick="getData()">Cargar</button>
+        </form>
+        <div>
+          <button id="boton" type="button" onclick="showMajor()">
+            Calcular Mayor
+          </button>
+          <br />
+          <button id="boton" type="button" onclick="showMinor()">
+            Calcular Menor
+          </button>
+        </div>
+      </div>
+      <div>
         <h2>Edades:</h2>
         <p id="mayor"></p>
         <p id="menor"></p>
-    </div>
+      </div>
+    </main>
+
     <script src="/script.js"></script>
-</body>
+  </body>
 </html>

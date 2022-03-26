@@ -1,19 +1,6 @@
-/*
-ITEM1:
-Number.NEGATIVE_INFINITY -> representa el mismo valor negativo de la propiedad del objeto global Infinity.
-En el proceso esta fijando como Max_num = -infinito dentro de la función, otra función similar es number.POSITIVE_INFINITY
- 
-La función find_max() recibe como parámetro objeto nums.
-Luego realiza un "for of", aqui recorre cada valor desde el primer elemento hasta nums(que fue el parámetro ingresado)
-Dentro del for of, se realiza una comparación para que num > max_num.
-finalmente se retorna el valor máximo.
-Los datos son almacenados dentro del objeto nums.
-se obtiene el valor máximo dentro del objeto.
-*/
-
 /*** ITEM 2 ***/
 
-class Alumno{
+class Persona{
     constructor (nombre,apellido, edad) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -39,17 +26,31 @@ function buscarMenor(nums){
     return min_num;
 }
 
+var edades = [];
+var personas = [];
+var count = 0;
+var getData = function(){
+    var name = document.getElementById("nombre").value;
+    var lastname = document.getElementById("apellido").value;
+    var age = document.getElementById("edad").value;   
+    console.log(name+" "+lastname+" "+age +" "+count);
+    
+    personas[count] = new Persona (name,lastname,age );
+    console.log(personas[count]);
+    edades[count] = personas[count].edad; 
+    count++;   
+}
 
-let alumno1 = new Alumno("Jose","Perez",17);
-let alumno2 = new Alumno("Maria","Lopez",25);
-let alumno3 = new Alumno("Carlos","Vicente",13);
-let alumno4 = new Alumno("Ornela","Saavedra",19);
-let alumno5 = new Alumno("Pepito","Argento",18);
+var showMajor = function(){
+    console.log(edades);
+    let mayor = buscarMayor(edades);
+    let pos = edades.indexOf(mayor);
+    document.getElementById("mayor").innerHTML = `<h3>La persona de Edad mayor es: ${personas[pos].nombre} con ${mayor}</h3>`;
 
-let edades = [alumno1.edad, alumno2.edad, alumno3.edad, alumno4.edad, alumno5.edad];
+}
 
-document.getElementById("mayor").innerHTML = `<h3>Edad del Alumno mayor es de: ${buscarMayor(edades)}</h3>`;
-document.getElementById("menor").innerHTML = `Edad del Alumno mayor es de: ${buscarMenor(edades)}`
-
-console.log(buscarMayor(edades));
-console.log(buscarMenor(edades));
+var showMinor = function(){
+    let menor= buscarMenor(edades);
+    let pos = edades.indexOf(menor);
+    document.getElementById("menor").innerHTML = `<h3> La persona de Edad Menor es: ${personas[pos].nombre} con ${menor}</h3>`
+}
